@@ -1,0 +1,1 @@
+SvelteKit app that connected to a Google Sheets containing seasonal offers for the OvationNetwork independent agents
