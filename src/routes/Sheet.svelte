@@ -69,10 +69,10 @@
     <tbody>
       {#each table ? table : sheetData as row, i}
       <tr class="text-black text-sm text-center">
-        <td class={i % 2 ? "bg-stone-300 p-2" : "bg-stone-100 p-2"}>{row.location}</td>
-        <td class={i % 2 ? "bg-stone-300 p-2" : "bg-stone-100 p-2"}>{row.hotel}</td>
-        <td class={i % 2 ? "bg-stone-300 p-10" : "bg-stone-100 p-10"}>{row.overview}</td>
-        <td class={i % 2 ? "bg-stone-300" : "bg-stone-100"}>{row.dates}</td>
+        <td class={i % 2 ? "bg-stone-300 p-2" : "bg-stone-100 p-2"}>{row.location ? row.location : ''}</td>
+        <td class={i % 2 ? "bg-stone-300 p-2" : "bg-stone-100 p-2"}>{row.hotel ? row.hotel : ''}</td>
+        <td class={i % 2 ? "bg-stone-300 p-10" : "bg-stone-100 p-10"}>{row.overview ? row.overview : ''}</td>
+        <td class={i % 2 ? "bg-stone-300" : "bg-stone-100"}>{row.dates ? row.dates : ''}</td>
         <td class={i % 2 ? "bg-stone-300" : "bg-stone-100"}>
           {row.instructions}
           <a href={row.information} target="_blank" class="btn btn-outline btn-info mt-2">MORE INFO</a>
