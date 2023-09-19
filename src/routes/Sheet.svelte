@@ -27,8 +27,8 @@
   }
 </script>
 
-<div>
-  <div class="input-group mb-5">
+<div class="bg-white">
+  <div class="input-group">
     <select class="select select-bordered" bind:value={queryFilter}>
       <option value="location">Location</option>
       <option value="hotel">Hotel</option>
