@@ -1,15 +1,6 @@
 <script>
   export let sheetData;
-  import { 
-    /* sortDataByRegion,
-    sortDataByCountry,
-    sortDataByCity, */
-    filterDataByRegion,
-    filterDataByCity,
-    filterDataByCountry,
-    filterDataByHotel,
-    /* filterDataByCommissionVirtuoso,
-    filterDataBySpecialAmenity */ } from '$lib'
+  import { filterDataByHotel, filterDataByLocation } from '$lib'
 
   let query;
   let queryFilter;
@@ -19,13 +10,9 @@
   // $: console.log(`changed queryFilter to ${queryFilter}`)
   // $: console.log(`changed query to ${query}`)
 
-  $: if (queryFilter === "city" && query) {
-    table = filterDataByCity(sheetData, formatInput(query))
+  $: if (queryFilter === "location" && query) {
+    table = filterDataByLocation(sheetData, formatInput(query))
     // console.log(`filtered by city: ${table}`)
-  } else if (queryFilter === "country" && query) {
-    table = filterDataByCountry(sheetData, formatInput(query))
-  } else if (queryFilter === "region" && query) {
-    table = filterDataByRegion(sheetData, formatInput(query))
   } else if (queryFilter === "hotel" && query) {
     table = filterDataByHotel(sheetData, formatInput(query))
   } else {
@@ -40,20 +27,18 @@
   }
 </script>
 
-<!-- <div>
+<div>
   <div class="input-group mb-5">
     <select class="select select-bordered" bind:value={queryFilter}>
-      <option value="city">Location</option>
-      <option value="country">Hotel</option>
-      <option value="region">Booking Instructions</option>
-      <option value="hotel">More Info</option>
+      <option value="location">Location</option>
+      <option value="hotel">Hotel</option>
     </select>
     <input type="text" placeholder="Search…" class="input input-bordered" bind:value={query}/>
     <button class="btn">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
     </button>
   </div>
-</div>  ADD DATES, Commission, Booking instructions-->
+</div>
 
 <div>
   <table class="table-auto">

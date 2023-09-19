@@ -78,73 +78,10 @@ export const shapeSheetData = (data) => {
   return output;
 };
 
-// this function will sort an array of objects by region
-export const sortDataByRegion = (data) => {
-  const sortedData = data.sort((a, b) => {
-    if (a.region < b.region) {
-      return -1;
-    }
-    if (a.region > b.region) {
-      return 1;
-    }
-    return 0;
-  });
 
-  return sortedData;
-}
-
-// this function will sort an array of objects by city
-export const sortDataByCity = (data) => {
-  const sortedData = data.sort((a, b) => {
-    if (a.city < b.city) {
-      return -1;
-    }
-    if (a.city > b.city) {
-      return 1;
-    }
-    return 0;
-  });
-
-  return sortedData;
-}
-
-// this function will sort an array of objects by country
-export const sortDataByCountry = (data) => {
-  const sortedData = data.sort((a, b) => {
-    if (a.country < b.country) {
-      return -1;
-    }
-    if (a.country > b.country) {
-      return 1;
-    }
-    return 0;
-  });
-
-  return sortedData;
-}
-
-// this function will filter an array of objects and return only those with a given region
-export const filterDataByRegion = (data, region) => {
+export const filterDataByLocation = (data, location) => {
   const filteredData = data.filter((entry) => {
-    return entry.region?.includes(region)
-  });
-
-  return filteredData;
-}
-
-// this function will filter an array of objects and return only those with a given country
-export const filterDataByCountry = (data, country) => {
-  const filteredData = data.filter((entry) => {
-    return entry.country?.includes(country)
-  });
-
-  return filteredData;
-}
-
-// this function will filter an array of objects and return only those with a given city
-export const filterDataByCity = (data, city) => {
-  const filteredData = data.filter((entry) => {
-    return entry.city?.includes(city)
+    return entry.location?.includes(location)
   });
 
   return filteredData;
@@ -158,31 +95,3 @@ export const filterDataByHotel = (data, hotel) => {
 
   return filteredData;
 }
-
-// this function will filter an array of objects and return only those with commission that contains "Virtuoso"
-export const filterDataByCommissionVirtuoso = (data) => {
-  const filteredData = data.filter((entry) => {
-    return entry.commission?.includes("Virtuoso");
-  });
-
-  return filteredData;
-}
-
-// this function will filter an array of objects and return only those with commission that contains "STEP"
-export const filterDataByCommissionSTEP = (data) => {
-  const filteredData = data.filter((entry) => {
-    return entry.commission?.includes("STEP");
-  });
-
-  return filteredData;
-}
-
-// this functions will filter an array of objects and return only those with special amenity
-export const filterDataBySpecialAmenity = (data) => {
-  const filteredData = data.filter((entry) => {
-    return entry.special_amenity?.length > 0;
-  });
-
-  return filteredData;
-}
-
