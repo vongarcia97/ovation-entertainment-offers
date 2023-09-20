@@ -59,7 +59,7 @@
         <td class={i % 2 ? "bg-stone-300 p-10" : "bg-stone-100 p-10"}>{row.overview ? row.overview : ''}</td>
         <td class={i % 2 ? "bg-stone-300" : "bg-stone-100"}>{row.dates ? row.dates : ''}</td>
         <td class={i % 2 ? "bg-stone-300" : "bg-stone-100"}>
-          {row.instructions}
+          <p>{row.instructions}</p>
           <a href={row.information} target="_blank" class="btn btn-outline btn-info mt-2">MORE INFO</a>
         </td>
       </tr>
