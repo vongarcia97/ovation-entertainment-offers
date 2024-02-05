@@ -6,7 +6,7 @@ export async function load({ fetch }) {
 
   const getData = async () => {
     try { 
-      const response = await fetch("https://docs.google.com/spreadsheets/d/1ugN5_d-iyvchA_lh_w0eB_odqFgMrndHTQxck80nXn0/gviz/tq?");
+      const response = await fetch("https://docs.google.com/spreadsheets/d/1EyqAkDGV3KcDq9JXx7wlAULXvK9LNRtIX9vzTVNTTE8/gviz/tq?");
       const dataText = await response.text();
       console.log(dataText)
 
